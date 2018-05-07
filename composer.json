@@ -1,11 +1,12 @@
 {
     "name": "reactive-apps/command-bunny-consumer",
     "require": {
-        "php": "^7.0",
+        "php": "^7.1",
         "bunny/bunny": "^0.4.0",
         "doctrine/annotations": "^1.4",
         "reactive-apps/command": "dev-master",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
+        "wyrihaximus/react-observable-bunny": "dev-master",
         "wyrihaximus/tactician-command-handler-mapper": "^1.0",
         "wyrihaximus/tactician-job-command-mapper": "^1.0"
     },
@@ -15,7 +16,7 @@
     "config": {
         "sort-packages": true,
         "platform": {
-            "php": "7.0"
+            "php": "7.1"
         }
     },
     "autoload": {
