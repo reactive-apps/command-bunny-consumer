@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b169ec92fb05d14e84a007af6a324359",
+    "content-hash": "9d347678a59f9f9b09434b087ccda060",
     "packages": [
         {
             "name": "bunny/bunny",
@@ -346,6 +346,36 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "time": "2017-12-27T21:34:25+00:00"
+        },
+        {
+            "name": "reactive-apps/rx-streams",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/reactive-apps/rx-streams.git",
+                "reference": "c2e842e95b41561daf427cfafb38eff1baa74069"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/reactive-apps/rx-streams/zipball/c2e842e95b41561daf427cfafb38eff1baa74069",
+                "reference": "c2e842e95b41561daf427cfafb38eff1baa74069",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2",
+                "reactivex/rxphp": "^2.0"
+            },
+            "require-dev": {
+                "api-clients/test-utilities": "^4.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ReactiveApps\\Rx\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "time": "2018-05-20T10:55:26+00:00"
         },
         {
             "name": "reactivex/rxphp",
@@ -3916,15 +3946,16 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "reactive-apps/command": 20,
+        "reactive-apps/rx-streams": 20,
         "wyrihaximus/react-observable-bunny": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.1"
+        "php": "^7.2"
     },
     "platform-dev": [],
     "platform-overrides": {
-        "php": "7.1"
+        "php": "7.2"
     }
 }
