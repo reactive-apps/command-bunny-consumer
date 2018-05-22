@@ -54,7 +54,7 @@ final class BunnyConsumer implements Command
     {
         $this->logger->debug('Connecting');
         /** @var Client $bunny */
-        $bunny = yield $this>$bunny->connect();
+        $bunny = yield $this->$bunny->connect();
         $this->logger->debug('Connected');
 
         $observableBunny = new ObservableBunny($this->loop, $bunny);
