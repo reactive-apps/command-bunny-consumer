@@ -7,6 +7,8 @@
         "reactive-apps/command": "dev-master",
         "reactive-apps/rx-streams": "dev-master",
         "wyrihaximus/doctrine-annotation-autoloader": "^1.0",
+        "wyrihaximus/psr-3-callable-throwable-logger": "^1.0",
+        "wyrihaximus/psr-3-context-logger": "^1.0",
         "wyrihaximus/react-observable-bunny": "dev-master",
         "wyrihaximus/tactician-command-handler-mapper": "^1.0",
         "wyrihaximus/tactician-job-command-mapper": "^1.0"
@@ -15,9 +17,20 @@
         "api-clients/test-utilities": "^4.2"
     },
     "extra": {
+        "php-di-definitions": {
+            "di": [
+                "config/di/bunny.php"
+            ]
+        },
         "reactive-apps": {
             "command": {
                 "ReactiveApps\\Command\\BunnyConsumer": "src"
+            },
+            "required-config": {
+                "bunny.host": "The IP address/hostname of the RabbitMQ server",
+                "bunny.vhost": "The RabbitMQ vhost to connect to",
+                "bunny.user": "User to login to RabbitMQ",
+                "bunny.password": "Password to login to RabbitMQ"
             }
         }
     },
