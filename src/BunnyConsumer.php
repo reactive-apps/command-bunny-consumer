@@ -9,7 +9,6 @@ use ReactiveApps\Command\Command;
 use ReactiveApps\Rx\Shutdown;
 use WyriHaximus\PSR3\CallableThrowableLogger\CallableThrowableLogger;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
-use WyriHaximus\React\ObservableBunny\Message;
 use WyriHaximus\React\ObservableBunny\ObservableBunny;
 
 final class BunnyConsumer implements Command
@@ -37,17 +36,24 @@ final class BunnyConsumer implements Command
     private $shutdown;
 
     /**
+     * @var callable[]
+     */
+    private $queues = [];
+
+    /**
      * @param Client $bunny
      * @param LoopInterface $loop
      * @param LoggerInterface $logger
      * @param Shutdown $shutdown
+     * @param callable[] $queues
      */
-    public function __construct(Client $bunny, LoopInterface $loop, LoggerInterface $logger, Shutdown $shutdown)
+    public function __construct(Client $bunny, LoopInterface $loop, LoggerInterface $logger, Shutdown $shutdown, array $queues)
     {
         $this->bunny = $bunny;
         $this->loop = $loop;
         $this->logger = new ContextLogger($logger, ['section' => 'bunny consumer'], 'bunny consumer');
         $this->shutdown = $shutdown;
+        $this->queues = $queues;
     }
 
     public function __invoke()
@@ -58,19 +64,19 @@ final class BunnyConsumer implements Command
         $this->logger->debug('Connected');
 
         $observableBunny = new ObservableBunny($this->loop, $bunny);
-        $subject = $observableBunny->consume('foo.bar', [0, 10])->subscribe(function (Message $message) {
-            var_export([
-                $message->getMessage(),
-            ]);
-            $message->ack();
-        }, CallableThrowableLogger::create($this->logger));
+        $subjects = [];
+        foreach ($this->queues as $queue => $handler) {
+            $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe($handler, CallableThrowableLogger::create($this->logger));
+        }
 
         /**
          * Dispose of the subscription
          */
-        $this->shutdown->subscribe(null, null, function () use ($subject) {
+        $this->shutdown->subscribe(null, null, function () use ($subjects) {
             $this->logger->debug('Disposing subscription');
-            $subject->dispose();
+            foreach ($subjects as $subject) {
+                $subject->dispose();
+            }
         });
 
         /**

@@ -19,7 +19,8 @@
     "extra": {
         "php-di-definitions": {
             "di": [
-                "config/di/bunny.php"
+                "config/di/bunny.php",
+                "config/di/bunny-consumer.php"
             ]
         },
         "reactive-apps": {
@@ -30,7 +31,8 @@
                 "bunny.host": "The IP address/hostname of the RabbitMQ server",
                 "bunny.vhost": "The RabbitMQ vhost to connect to",
                 "bunny.user": "User to login to RabbitMQ",
-                "bunny.password": "Password to login to RabbitMQ"
+                "bunny.password": "Password to login to RabbitMQ",
+                "bunny.queues": "array with callables for each queue to handle new messages: ['queue' => function () {}]"
             }
         }
     },
