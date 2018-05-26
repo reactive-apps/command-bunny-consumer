@@ -87,7 +87,6 @@ final class BunnyConsumer implements Command
             $this->loop->addTimer(1, function () use ($bunny) {
                 $this->logger->debug('Disconnecting');
                 $bunny->disconnect()->done(function () {
-                    var_export($this->loop);
                     $this->logger->debug('Disconnected');
                 }, CallableThrowableLogger::create($this->logger));
             });
