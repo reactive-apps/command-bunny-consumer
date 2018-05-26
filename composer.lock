@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab08a94cfeb66c93ee0f04f3c9bffaf5",
+    "content-hash": "a2222cb8567d94ec65c712bd013e0556",
     "packages": [
         {
             "name": "bunny/bunny",
@@ -570,16 +570,16 @@
         },
         {
             "name": "wyrihaximus/react-observable-bunny",
-            "version": "dev-master",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/reactphp-observable-bunny.git",
-                "reference": "764f9eed3040b577e4b97359fd1e071af8cd1473"
+                "reference": "1eae354d2b21625781d84c828d75090887b3724a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/reactphp-observable-bunny/zipball/764f9eed3040b577e4b97359fd1e071af8cd1473",
-                "reference": "764f9eed3040b577e4b97359fd1e071af8cd1473",
+                "url": "https://api.github.com/repos/WyriHaximus/reactphp-observable-bunny/zipball/1eae354d2b21625781d84c828d75090887b3724a",
+                "reference": "1eae354d2b21625781d84c828d75090887b3724a",
                 "shasum": ""
             },
             "require": {
@@ -610,7 +610,7 @@
                 }
             ],
             "description": "RxPHP decorator around bunny",
-            "time": "2018-04-07T13:13:18+00:00"
+            "time": "2018-05-26T21:28:59+00:00"
         },
         {
             "name": "wyrihaximus/tactician-command-handler-mapper",
@@ -4093,8 +4093,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "reactive-apps/command": 20,
-        "reactive-apps/rx-streams": 20,
-        "wyrihaximus/react-observable-bunny": 20
+        "reactive-apps/rx-streams": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
