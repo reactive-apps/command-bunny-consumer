@@ -83,10 +83,14 @@ final class BunnyConsumer implements Command
          * Give observable bunny a second to clean up
          */
         $this->shutdown->subscribe(null, null, function () use ($bunny) {
-            $this->logger->debug('Disconnecting');
-            $bunny->disconnect()->done(function () {
-                $this->logger->debug('Disconnected');
-            }, CallableThrowableLogger::create($this->logger));
+            $this->logger->debug('Scheduling disconnect');
+            $this->loop->addTimer(1, function () use ($bunny) {
+                $this->logger->debug('Disconnecting');
+                $bunny->disconnect()->done(function () {
+                    var_export($this->loop);
+                    $this->logger->debug('Disconnected');
+                }, CallableThrowableLogger::create($this->logger));
+            });
         });
     }
 }
