@@ -63,7 +63,7 @@ final class BunnyConsumer implements Command
         $bunny = yield $this->bunny->connect();
         $this->logger->debug('Connected');
 
-        $observableBunny = new ObservableBunny($this->loop, $bunny);
+        $observableBunny = new ObservableBunny($this->loop, $bunny, 0.01);
         $subjects = [];
         foreach ($this->queues as $queue => $handler) {
             $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe($handler, CallableThrowableLogger::create($this->logger));
