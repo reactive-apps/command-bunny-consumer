@@ -3,6 +3,7 @@
 namespace ReactiveApps\Command\BunnyConsumer;
 
 use Bunny\Async\Client;
+use Bunny\Exception\ClientException;
 use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
 use ReactiveApps\Command\Command;
@@ -58,9 +59,14 @@ final class BunnyConsumer implements Command
 
     public function __invoke()
     {
-        $this->logger->debug('Connecting');
         /** @var Client $bunny */
-        $bunny = yield $this->bunny->connect();
+        $bunny = $this->bunny;
+        $this->logger->debug('Connecting');
+        try {
+            $bunny = yield $this->bunny->connect();
+        } catch (ClientException $ce) {
+            // Already connected
+        }
         $this->logger->debug('Connected');
 
         $observableBunny = new ObservableBunny($this->loop, $bunny, 0.01);
