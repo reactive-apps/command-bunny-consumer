@@ -14,7 +14,7 @@
         "wyrihaximus/tactician-job-command-mapper": "^1.0"
     },
     "require-dev": {
-        "api-clients/test-utilities": "^4.2"
+        "api-clients/test-utilities": "^5.0"
     },
     "extra": {
         "php-di-definitions": {
