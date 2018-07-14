@@ -8,9 +8,12 @@ use Psr\Log\LoggerInterface;
 use React\EventLoop\LoopInterface;
 use ReactiveApps\Command\Command;
 use ReactiveApps\Rx\Shutdown;
+use Recoil\React\ReactKernel;
+use Rx\Subject\Subject;
 use WyriHaximus\PSR3\CallableThrowableLogger\CallableThrowableLogger;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 use WyriHaximus\React\ObservableBunny\ObservableBunny;
+use WyriHaximus\Recoil\QueueCaller;
 
 final class BunnyConsumer implements Command
 {
@@ -69,10 +72,17 @@ final class BunnyConsumer implements Command
         }
         $this->logger->debug('Connected');
 
+        $queue = new Subject();
+        $queueCaller = new QueueCaller(new ReactKernel($this->loop));
+        $queueCaller->call($queue);
+
         $observableBunny = new ObservableBunny($this->loop, $bunny, 0.01);
         $subjects = [];
         foreach ($this->queues as $queue => $handler) {
-            $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe($handler, CallableThrowableLogger::create($this->logger));
+            $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe(function (...$args) use ($handler, &$queue) {
+                array_unshift($args, $handler);
+                $queue->onNext($args);
+            }, CallableThrowableLogger::create($this->logger), [$queue, 'onCompleted']);
         }
 
         /**

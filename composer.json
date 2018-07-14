@@ -10,6 +10,7 @@
         "wyrihaximus/psr-3-callable-throwable-logger": "^1.0",
         "wyrihaximus/psr-3-context-logger": "^1.0",
         "wyrihaximus/react-observable-bunny": "^1.1",
+        "wyrihaximus/recoil-queue-caller": "dev-master",
         "wyrihaximus/tactician-command-handler-mapper": "^1.0",
         "wyrihaximus/tactician-job-command-mapper": "^1.0"
     },
