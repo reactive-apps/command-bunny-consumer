@@ -72,17 +72,19 @@ final class BunnyConsumer implements Command
         }
         $this->logger->debug('Connected');
 
-        $queue = new Subject();
-        $queueCaller = new QueueCaller(new ReactKernel($this->loop));
-        $queueCaller->call($queue);
+        $queueStream = new Subject();
+        $queueCaller = new QueueCaller(ReactKernel::create($this->loop));
+        $queueCaller->call($queueStream);
 
         $observableBunny = new ObservableBunny($this->loop, $bunny, 0.01);
         $subjects = [];
         foreach ($this->queues as $queue => $handler) {
-            $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe(function (...$args) use ($handler, &$queue) {
+            $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe(function (...$args) use ($handler, $queueStream) {
                 array_unshift($args, $handler);
-                $queue->onNext($args);
-            }, CallableThrowableLogger::create($this->logger), [$queue, 'onCompleted']);
+                $queueStream->onNext($args);
+            }, CallableThrowableLogger::create($this->logger), function () use ($queueStream) {
+                $queueStream->onCompleted();
+            });
         }
 
         /**
