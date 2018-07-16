@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "6d96ebabdfd09e649cb51b33b05d1bcf",
+    "content-hash": "b37ad4643e16814a26febe6b76e08a2c",
     "packages": [
         {
             "name": "api-clients/rx",
@@ -952,16 +952,16 @@
         },
         {
             "name": "wyrihaximus/recoil-queue-caller",
-            "version": "dev-master",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/recoilphp-queue-caller.git",
-                "reference": "4a73c2802262da52da5779bbb3d5134a5dd4e831"
+                "reference": "5574944aeb3ed6f9c6b48b49fdd01a8f26960dd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/recoilphp-queue-caller/zipball/4a73c2802262da52da5779bbb3d5134a5dd4e831",
-                "reference": "4a73c2802262da52da5779bbb3d5134a5dd4e831",
+                "url": "https://api.github.com/repos/WyriHaximus/recoilphp-queue-caller/zipball/5574944aeb3ed6f9c6b48b49fdd01a8f26960dd0",
+                "reference": "5574944aeb3ed6f9c6b48b49fdd01a8f26960dd0",
                 "shasum": ""
             },
             "require": {
@@ -994,7 +994,7 @@
                 }
             ],
             "description": "Call all callables from the observable from within a RecoilPHP coroutine",
-            "time": "2018-07-14T20:13:31+00:00"
+            "time": "2018-07-15T15:59:06+00:00"
         },
         {
             "name": "wyrihaximus/rx-recoil-looper",
@@ -4405,8 +4405,7 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "reactive-apps/command": 20,
-        "reactive-apps/rx-streams": 20,
-        "wyrihaximus/recoil-queue-caller": 20
+        "reactive-apps/rx-streams": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
