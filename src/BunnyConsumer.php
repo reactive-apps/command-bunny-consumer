@@ -13,6 +13,7 @@ use Rx\Subject\Subject;
 use WyriHaximus\PSR3\CallableThrowableLogger\CallableThrowableLogger;
 use WyriHaximus\PSR3\ContextLogger\ContextLogger;
 use WyriHaximus\React\ObservableBunny\ObservableBunny;
+use WyriHaximus\Recoil\Call;
 use WyriHaximus\Recoil\QueueCaller;
 
 final class BunnyConsumer implements Command
@@ -81,7 +82,7 @@ final class BunnyConsumer implements Command
         foreach ($this->queues as $queue => $handler) {
             $subjects[$queue] = $observableBunny->consume($queue, [0, 10])->subscribe(function (...$args) use ($handler, $queueStream) {
                 array_unshift($args, $handler);
-                $queueStream->onNext($args);
+                $queueStream->onNext(new Call($args));
             }, CallableThrowableLogger::create($this->logger), function () use ($queueStream) {
                 $queueStream->onCompleted();
             });
