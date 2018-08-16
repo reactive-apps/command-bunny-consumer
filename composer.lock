@@ -1,7 +1,7 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
     "content-hash": "a63ce70cf9e6723b0cf811c486830348",
@@ -52,16 +52,16 @@
         },
         {
             "name": "bunny/bunny",
-            "version": "v0.4.0",
+            "version": "v0.4.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jakubkulhan/bunny.git",
-                "reference": "d67bb6d6d2fa5d8e802b7be35a1d0389403491e5"
+                "reference": "8744243db0df7525a65299adef1aa50be407db53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jakubkulhan/bunny/zipball/d67bb6d6d2fa5d8e802b7be35a1d0389403491e5",
-                "reference": "d67bb6d6d2fa5d8e802b7be35a1d0389403491e5",
+                "url": "https://api.github.com/repos/jakubkulhan/bunny/zipball/8744243db0df7525a65299adef1aa50be407db53",
+                "reference": "8744243db0df7525a65299adef1aa50be407db53",
                 "shasum": ""
             },
             "require": {
@@ -104,7 +104,7 @@
                 "react-php",
                 "reactphp"
             ],
-            "time": "2018-04-07T07:01:13+00:00"
+            "time": "2018-08-15T13:25:32+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -2108,7 +2108,7 @@
                     "homepage": "http://blog.astrumfutura.com"
                 },
                 {
-                    "name": "Théo Fidry",
+                    "name": "Théo FIDRY",
                     "email": "theo.fidry@gmail.com"
                 }
             ],
