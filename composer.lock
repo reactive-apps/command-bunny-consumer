@@ -952,16 +952,16 @@
         },
         {
             "name": "wyrihaximus/recoil-queue-caller",
-            "version": "2.0.0",
+            "version": "2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/recoilphp-queue-caller.git",
-                "reference": "37b5aa182e2fd042b214d7f8c4a1ad464d4a1500"
+                "reference": "03b37fcde71db7a72a568301b94532c694c945b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/recoilphp-queue-caller/zipball/37b5aa182e2fd042b214d7f8c4a1ad464d4a1500",
-                "reference": "37b5aa182e2fd042b214d7f8c4a1ad464d4a1500",
+                "url": "https://api.github.com/repos/WyriHaximus/recoilphp-queue-caller/zipball/03b37fcde71db7a72a568301b94532c694c945b2",
+                "reference": "03b37fcde71db7a72a568301b94532c694c945b2",
                 "shasum": ""
             },
             "require": {
@@ -994,20 +994,20 @@
                 }
             ],
             "description": "Call all callables from the observable from within a RecoilPHP coroutine",
-            "time": "2018-07-25T17:12:04+00:00"
+            "time": "2018-08-03T15:34:33+00:00"
         },
         {
             "name": "wyrihaximus/rx-recoil-looper",
-            "version": "1.0.0",
+            "version": "1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-rxphp-recoilphp-looper.git",
-                "reference": "7f56d3781126a9865d56d23f583467fbe2d2962b"
+                "reference": "b8e15dd4ebdf0e8648af0936d3e150b161cb967a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-rxphp-recoilphp-looper/zipball/7f56d3781126a9865d56d23f583467fbe2d2962b",
-                "reference": "7f56d3781126a9865d56d23f583467fbe2d2962b",
+                "url": "https://api.github.com/repos/WyriHaximus/php-rxphp-recoilphp-looper/zipball/b8e15dd4ebdf0e8648af0936d3e150b161cb967a",
+                "reference": "b8e15dd4ebdf0e8648af0936d3e150b161cb967a",
                 "shasum": ""
             },
             "require": {
@@ -1042,7 +1042,7 @@
                 }
             ],
             "description": "Looper functions for while and foreach around rxphp using recoil",
-            "time": "2018-07-14T18:47:25+00:00"
+            "time": "2018-08-02T06:08:06+00:00"
         },
         {
             "name": "wyrihaximus/tactician-command-handler-mapper",
