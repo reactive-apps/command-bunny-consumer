@@ -11,7 +11,7 @@
         "wyrihaximus/psr-3-context-logger": "^1.0",
         "wyrihaximus/react-observable-bunny": "^1.1",
         "wyrihaximus/recoil-queue-caller": "^2.0",
-        "wyrihaximus/tactician-command-handler-mapper": "^1.0",
+        "wyrihaximus/tactician-command-handler-mapper": "^2.0",
         "wyrihaximus/tactician-job-command-mapper": "^1.0"
     },
     "require-dev": {
