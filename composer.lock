@@ -281,16 +281,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.0.3",
+            "version": "v4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d"
+                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/bd088dc940a418f09cda079a9b5c7c478890fb8d",
-                "reference": "bd088dc940a418f09cda079a9b5c7c478890fb8d",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/d0230c5c77a7e3cfa69446febf340978540958c0",
+                "reference": "d0230c5c77a7e3cfa69446febf340978540958c0",
                 "shasum": ""
             },
             "require": {
@@ -306,7 +306,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0-dev"
+                    "dev-master": "4.1-dev"
                 }
             },
             "autoload": {
@@ -328,7 +328,7 @@
                 "parser",
                 "php"
             ],
-            "time": "2018-07-15T17:25:16+00:00"
+            "time": "2018-10-10T09:24:14+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -1439,16 +1439,16 @@
         },
         {
             "name": "wyrihaximus/tactician-command-handler-mapper",
-            "version": "2.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-tactician-command-handler-mapper.git",
-                "reference": "a64acff9da328698fcaff4bd3ee038a86b15eb2b"
+                "reference": "0672ddb611cbb6a6d753aa6389b3b7781b01fd81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-tactician-command-handler-mapper/zipball/a64acff9da328698fcaff4bd3ee038a86b15eb2b",
-                "reference": "a64acff9da328698fcaff4bd3ee038a86b15eb2b",
+                "url": "https://api.github.com/repos/WyriHaximus/php-tactician-command-handler-mapper/zipball/0672ddb611cbb6a6d753aa6389b3b7781b01fd81",
+                "reference": "0672ddb611cbb6a6d753aa6389b3b7781b01fd81",
                 "shasum": ""
             },
             "require": {
@@ -1480,7 +1480,7 @@
                 }
             ],
             "description": "Command to Handler mapper for Tactician",
-            "time": "2018-10-14T00:04:50+00:00"
+            "time": "2018-10-14T08:16:12+00:00"
         },
         {
             "name": "wyrihaximus/tactician-job-command-mapper",
